@@ -1,0 +1,54 @@
+{
+  "name": "find-your-movie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
+    "lint": "npx eslint ./src/ --ext .ts,.tsx --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katefaith/find-your-movie.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katefaith/find-your-movie/issues"
+  },
+  "homepage": "https://github.com/katefaith/find-your-movie#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
+    "@babel/runtime": "^7.12.1",
+    "@types/react": "^16.9.55",
+    "@types/react-dom": "^16.9.9",
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^5.0.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "html-webpack-plugin": "^4.5.0",
+    "sass": "^1.28.0",
+    "sass-loader": "^10.0.4",
+    "style-loader": "^2.0.0",
+    "typescript": "^4.0.5",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
