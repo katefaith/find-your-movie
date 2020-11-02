@@ -1,6 +1,7 @@
 @import './base/normalize';
+@import './abstracts/variables';
 
-h1 {
-  color: #27aedb;
-  text-align: center;
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
 }

@@ -1,0 +1,37 @@
+@import './../../sass/abstracts/variables.scss';
+
+.results-item {
+  width: 300px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+.results-item__image {
+  width: 300px;
+  height: 450px;
+  background-image: url("https://m.media-amazon.com/images/M/MV5BNzM3NDFhYTAtYmU5Mi00NGRmLTljYjgtMDkyODQ4MjNkMGY2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.results-item__info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 5px;
+}
+
+.results-item__title {
+  margin: 0;
+}
+
+.results-item__release-date {
+  padding: 3px 5px;
+  border: 1px solid $primary-color;
+  border-radius: 3px;
+}

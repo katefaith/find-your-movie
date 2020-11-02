@@ -1,0 +1,16 @@
+@import './../../sass/abstracts/variables.scss';
+
+.search__form {
+  color: $secondary-color;
+}
+
+.search__title {
+  text-transform: uppercase;
+}
+
+.search__actions {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
