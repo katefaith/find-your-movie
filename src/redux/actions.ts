@@ -1,8 +1,28 @@
-import { REQUEST_MOVIES } from './types';
+import { MoviesActionTypes } from './types';
 
-export default function getMovies(request: string) {
+export function getMovies(request: string) {
   return {
-    type: REQUEST_MOVIES,
+    type: MoviesActionTypes.GET_MOVIES,
     request,
+  };
+}
+
+export function getMoviesStart() {
+  return {
+    type: MoviesActionTypes.GET_MOVIES_START,
+  };
+}
+
+export function getMoviesFinish(movies) {
+  return {
+    type: MoviesActionTypes.GET_MOVIES_FINISH,
+    movies,
+  };
+}
+
+export function getMoviesError(error) {
+  return {
+    type: MoviesActionTypes.GET_MOVIES_ERROR,
+    error,
   };
 }

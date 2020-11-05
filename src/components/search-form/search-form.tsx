@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import getMovies from '../../redux/actions';
+import { getMovies } from '../../redux/actions';
 
 import './search-form.scss';
 

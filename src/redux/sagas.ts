@@ -1,18 +1,21 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
 import axios from 'axios';
-import { FETCH_MOVIES, REQUEST_MOVIES } from './types';
-import getMovies from './actions';
+import { MoviesActionTypes } from './types';
+import {
+  getMovies, getMoviesStart, getMoviesFinish, getMoviesError,
+} from './actions';
 
-export default function* sagaWatcher() {
-  yield takeEvery(REQUEST_MOVIES, sagaWorker);
+export default function* getMoviesWatcher() {
+  yield takeEvery(MoviesActionTypes.GET_MOVIES, getMoviesWorker);
 }
 
-function* sagaWorker({ request }: ReturnType<typeof getMovies>) {
+function* getMoviesWorker({ request }: ReturnType<typeof getMovies>) {
+  yield put(getMoviesStart()); // dispatch
   try {
-    const payload = yield call(fetchMovies, request);
-    yield put({ type: FETCH_MOVIES, payload });
-  } catch (e) {
-    console.log(e);
+    const response = yield call(fetchMovies, request); // await
+    yield put(getMoviesFinish(response));
+  } catch (error) {
+    yield put(getMoviesError(error));
   }
 }
 
