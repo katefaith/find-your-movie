@@ -8,6 +8,10 @@
   text-transform: uppercase;
 }
 
+.search__input {
+  color: $primary-color;
+}
+
 .search__actions {
   padding: 20px 0;
   display: flex;
