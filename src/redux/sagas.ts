@@ -5,7 +5,7 @@ import {
   getMovies, getMoviesStart, getMoviesFinish, getMoviesError,
 } from './actions';
 
-export default function* getMoviesWatcher() {
+export function* getMoviesWatcher() {
   yield takeEvery(MoviesActionTypes.GET_MOVIES, getMoviesWorker);
 }
 

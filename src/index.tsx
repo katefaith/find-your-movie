@@ -8,7 +8,7 @@ import App from './components/app/app';
 import rootReducer from './redux/rootReducer';
 
 import './sass/styles.scss';
-import sagaWatcher from './redux/sagas';
+import { getMoviesWatcher } from './redux/sagas';
 
 const saga = createSagaMiddleware();
 
@@ -18,7 +18,7 @@ const store = createStore(rootReducer, compose(
   (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
 ));
 
-saga.run(sagaWatcher);
+saga.run(getMoviesWatcher);
 
 const app = (
   <Provider store={store}>

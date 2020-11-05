@@ -1,25 +1,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { moviesSelector, isFetchingSelector, numberOfMoviesSelector } from '../../selectors';
 
 import ResultsItem from '../results-item';
 
 import './results-body.scss';
 
-type RootState = {
-  movies: {
-    movies: any
-    isFetching: boolean
-  }
-}
-
 const ResultsBody: React.FC = () => {
-  const movies = useSelector((state: RootState) => state.movies.movies);
-  const isFetching = useSelector((state: RootState) => state.movies.isFetching);
+  const movies = useSelector(moviesSelector);
+  const isFetching = useSelector(isFetchingSelector);
+  const numberOfMovies = useSelector(numberOfMoviesSelector);
 
   if (isFetching) {
     return <p className="wrapper">Loading...</p>;
   }
-  if (!movies.length) {
+  if (!numberOfMovies) {
     return <p className="wrapper">No films found</p>;
   }
   return (

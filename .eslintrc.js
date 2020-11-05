@@ -25,6 +25,7 @@ module.exports = {
     ],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'no-use-before-define': 'off',
+    'import/prefer-default-export': 'off',
   },
   settings: {
     'import/resolver': {
