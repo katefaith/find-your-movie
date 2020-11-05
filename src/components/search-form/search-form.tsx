@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import fetchMovies from '../../redux/actions';
+import getMovies from '../../redux/actions';
 
 import './search-form.scss';
 
@@ -10,7 +10,7 @@ const SearchForm: React.FC = () => {
 
   const submitHandler = (event: any) => {
     event.preventDefault();
-    dispatch(fetchMovies()); // fetchMovies(request)
+    dispatch(getMovies(request));
   };
 
   return (
