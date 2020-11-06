@@ -1,15 +1,17 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { moviesSelector, isFetchingSelector, numberOfMoviesSelector } from '../../selectors';
+import {
+  getIsFetching, getNumberOfMovies, getSortedMovies,
+} from '../../selectors';
 
 import ResultsItem from '../results-item';
 
 import './results-body.scss';
 
 const ResultsBody: React.FC = () => {
-  const movies = useSelector(moviesSelector);
-  const isFetching = useSelector(isFetchingSelector);
-  const numberOfMovies = useSelector(numberOfMoviesSelector);
+  const isFetching = useSelector(getIsFetching);
+  const numberOfMovies = useSelector(getNumberOfMovies);
+  const sortedMovies = useSelector(getSortedMovies);
 
   if (isFetching) {
     return <p className="wrapper">Loading...</p>;
@@ -19,7 +21,7 @@ const ResultsBody: React.FC = () => {
   }
   return (
     <div className="results__body  wrapper">
-      {movies.map((movie: any) => <ResultsItem movie={movie} key={movie.imdbID} />)}
+      {sortedMovies.map((movie: any) => <ResultsItem movie={movie} key={movie.imdbID} />)}
     </div>
   );
 };

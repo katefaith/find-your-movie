@@ -26,3 +26,10 @@ export function getMoviesError(error) {
     error,
   };
 }
+
+export function setSortByFilter(field) {
+  return {
+    type: MoviesActionTypes.SET_SORT_BY_FILTER,
+    sortBy: field,
+  };
+}

@@ -3,6 +3,7 @@ import { MoviesActionTypes } from './types';
 const initialState = {
   movies: [],
   isFetching: false,
+  sortBy: 'Title',
 };
 
 const moviesReducer = (state = initialState, action: any) => {
@@ -15,6 +16,9 @@ const moviesReducer = (state = initialState, action: any) => {
 
     case MoviesActionTypes.GET_MOVIES_ERROR:
       return { ...state, isFetching: false };
+
+    case MoviesActionTypes.SET_SORT_BY_FILTER:
+      return { ...state, sortBy: action.sortBy };
 
     default:
       return state;
