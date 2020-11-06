@@ -9,13 +9,15 @@ import './app.scss';
 
 const App: React.FC = () => (
   <>
-    <section className="search">
-      <div className="wrapper">
-        <Header />
-        <SearchForm />
-      </div>
-    </section>
-    <Results />
+    <main>
+      <section className="search">
+        <div className="wrapper">
+          <Header />
+          <SearchForm />
+        </div>
+      </section>
+      <Results />
+    </main>
 
     <Footer />
   </>

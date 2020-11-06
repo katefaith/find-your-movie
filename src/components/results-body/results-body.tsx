@@ -14,10 +14,10 @@ const ResultsBody: React.FC = () => {
   const sortedMovies = useSelector(getSortedMovies);
 
   if (isFetching) {
-    return <p className="wrapper">Loading...</p>;
+    return <p className="results__notification">Loading...</p>;
   }
   if (!numberOfMovies) {
-    return <p className="wrapper">No films found</p>;
+    return <p className="results__notification">No films found</p>;
   }
   return (
     <div className="results__body  wrapper">

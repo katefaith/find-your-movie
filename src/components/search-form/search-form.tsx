@@ -28,7 +28,7 @@ const SearchForm: React.FC = () => {
         type="text"
         value={request}
         onChange={(event) => setReuest(event.target.value)}
-        placeholder="What do you want to watch?"
+        placeholder="What do you want to find?"
       />
 
       <div className="search__actions">
