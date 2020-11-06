@@ -1,9 +1,10 @@
 import { MoviesActionTypes } from './types';
 
-export function getMovies(request: string) {
+export function getMovies(request: string, searchType: string) {
   return {
     type: MoviesActionTypes.GET_MOVIES,
     request,
+    searchType,
   };
 }
 

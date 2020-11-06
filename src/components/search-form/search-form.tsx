@@ -6,11 +6,18 @@ import './search-form.scss';
 
 const SearchForm: React.FC = () => {
   const [request, setReuest] = useState('');
+  const [searchType, setSearchType] = useState('movie');
   const dispatch = useDispatch();
 
   const submitHandler = (event: any) => {
     event.preventDefault();
-    dispatch(getMovies(request));
+    dispatch(getMovies(request, searchType));
+  };
+
+  const radioChangeHandler = (event: any) => {
+    if (event.target.checked) {
+      setSearchType(event.target.value);
+    }
   };
 
   return (
@@ -26,14 +33,14 @@ const SearchForm: React.FC = () => {
 
       <div className="search__actions">
         <div className="search__filfer">
-          Search by
-          <label htmlFor="title">
-            <input id="title" type="radio" name="search" value="Title" />
-            Title
+          Search for
+          <label htmlFor="movie">
+            <input id="movie" type="radio" name="search" value="movie" onChange={radioChangeHandler} defaultChecked />
+            Movie
           </label>
-          <label htmlFor="director">
-            <input id="director" type="radio" name="search" value="Director" />
-            Director
+          <label htmlFor="series">
+            <input id="series" type="radio" name="search" value="series" onChange={radioChangeHandler} />
+            Series
           </label>
         </div>
         <button className="search__button  button" type="submit">Search</button>

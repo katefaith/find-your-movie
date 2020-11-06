@@ -21,7 +21,7 @@ export const getSortedMovies = createSelector(
       case 'Title':
         return [...movies].sort((a, b) => ((a.Title < b.Title) ? -1 : 1));
       case 'Year':
-        return [...movies].sort((a, b) => ((Number(a.Year) < Number(b.Year)) ? -1 : 1));
+        return [...movies].sort((a, b) => ((Number(a.Year.split('–')[0]) < Number(b.Year.split('–')[0])) ? -1 : 1));
       default:
         return movies;
     }

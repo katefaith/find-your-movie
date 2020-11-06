@@ -22,7 +22,7 @@ const ResultsFilter:React.FC = () => {
       </label>
       <label htmlFor="release-year">
         <input id="release-year" type="radio" name="sort" onChange={changeHandler} value="Year" />
-        Release date
+        Release year
       </label>
     </form>
   );
