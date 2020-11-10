@@ -1,4 +1,8 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { selectMovie } from '../../redux/routing/actions';
 
 import './results-item.scss';
 
@@ -10,18 +14,29 @@ type ResultsItemProps = {
   }
 }
 
-const ResultsItem: React.FC<ResultsItemProps> = ({ movie }: ResultsItemProps) => (
-  <div className="results__item results-item">
-    {/* <div className="results-item__image" /> */}
-    <img src={movie.Poster} alt={movie.Title} />
-    <div className="results-item__info">
-      <div className="results-item__descr">
-        <h2 className="results-item__title">{movie.Title}</h2>
-        {/* <p className="results-item__genre">Action & Adventure</p> */}
+const ResultsItem: React.FC<ResultsItemProps> = ({ movie }: ResultsItemProps) => {
+  const dispatch = useDispatch();
+
+  const clickHandler = (event) => {
+    event.preventDefault();
+    dispatch(selectMovie(movie.Title));
+  };
+
+  return (
+    <a
+      href={`/film/${movie.Title}`}
+      className="results__item results-item"
+      onClick={clickHandler}
+    >
+      <img src={movie.Poster} alt={movie.Title} />
+      <div className="results-item__info">
+        <div className="results-item__descr">
+          <h2 className="results-item__title">{movie.Title}</h2>
+        </div>
+        <div className="results-item__release-date">{movie.Year}</div>
       </div>
-      <div className="results-item__release-date">{movie.Year}</div>
-    </div>
-  </div>
-);
+    </a>
+  );
+};
 
 export default ResultsItem;

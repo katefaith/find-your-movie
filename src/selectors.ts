@@ -12,7 +12,7 @@ const getMovies = (state: RootState) => state.movies.movies;
 const getSortBy = (state: RootState): string => state.movies.sortBy;
 
 export const getIsFetching = (state: RootState): boolean => state.movies.isFetching;
-export const getNumberOfMovies = (state: RootState): number => state.movies.movies.length;
+export const getMoviesCount = (state: RootState): number => state.movies.movies.length;
 
 export const getSortedMovies = createSelector(
   [getMovies, getSortBy],

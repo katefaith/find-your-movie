@@ -1,5 +1,6 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
 import axios from 'axios';
+import { push } from 'connected-react-router';
 import { MoviesActionTypes } from './types';
 import {
   getMovies, getMoviesStart, getMoviesFinish, getMoviesError,
@@ -13,11 +14,17 @@ function* getMoviesWorker({ request, searchType }: ReturnType<typeof getMovies>)
   yield put(getMoviesStart()); // dispatch
   try {
     const response = yield call(fetchMovies, request, searchType); // await
+
     if (response.Search) {
       yield put(getMoviesFinish(response.Search));
+      yield put(push(`/search/${request}`));
     } else {
       yield put(getMoviesFinish([]));
     }
+    // if (response.Error) {
+    //   throw new Error(response.Error);
+    // }
+    // yield put(getMoviesFinish(response.Search));
   } catch (error) {
     yield put(getMoviesError(error));
   }
