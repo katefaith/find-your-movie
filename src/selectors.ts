@@ -6,6 +6,9 @@ type RootState = {
     isFetching: boolean
     sortBy: string
   }
+  selectedMovieId: {
+    movieId: string
+  }
 }
 
 const getMovies = (state: RootState) => state.movies.movies;
@@ -13,6 +16,7 @@ const getSortBy = (state: RootState): string => state.movies.sortBy;
 
 export const getIsFetching = (state: RootState): boolean => state.movies.isFetching;
 export const getMoviesCount = (state: RootState): number => state.movies.movies.length;
+export const getMovieId = (state: RootState): string => state.selectedMovieId.movieId;
 
 export const getSortedMovies = createSelector(
   [getMovies, getSortBy],

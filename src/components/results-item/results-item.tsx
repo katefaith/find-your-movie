@@ -11,15 +11,16 @@ type ResultsItemProps = {
     Title: string
     Year: string
     Poster: string
+    imdbID: string
   }
 }
 
 const ResultsItem: React.FC<ResultsItemProps> = ({ movie }: ResultsItemProps) => {
   const dispatch = useDispatch();
 
-  const clickHandler = (event) => {
+  const clickHandler = (event: any) => {
     event.preventDefault();
-    dispatch(selectMovie(movie.Title));
+    dispatch(selectMovie(movie.Title, movie.imdbID));
   };
 
   return (

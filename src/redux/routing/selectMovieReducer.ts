@@ -1,13 +1,13 @@
 import { RoutingActionTypes } from './types';
 
 const initialState = {
-  movieTitle: '',
+  movieId: '',
 };
 
-const reducer = (state = initialState, action: any) => {
+export const selectMovieReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case RoutingActionTypes.SELECT_MOVIE:
-      return { ...state, movieTitle: action.movieTitle };
+      return { ...state, movieId: action.movieId };
     default:
       return state;
   }
