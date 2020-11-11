@@ -2,21 +2,22 @@
 
 .results-item {
   width: 300px;
-  margin-right: 50px;
-  margin-bottom: 20px;
+  margin: 0 25px 50px;
+  text-decoration: none;
 
-  &:nth-child(3n) {
-    margin-right: 0;
+  &:visited {
+    color: inherit;
   }
 }
 
 .results-item__image {
   width: 300px;
   height: 450px;
-  // background-image: url("https://m.media-amazon.com/images/M/MV5BNzM3NDFhYTAtYmU5Mi00NGRmLTljYjgtMDkyODQ4MjNkMGY2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: contain;
+
+  &:hover {
+    filter: grayscale(100%);
+  }
 }
 
 .results-item__info {

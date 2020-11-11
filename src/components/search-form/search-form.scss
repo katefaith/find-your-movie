@@ -1,6 +1,7 @@
 @import './../../sass/abstracts/variables.scss';
 
 .search__form {
+  padding: 0 70px;
   display: flex;
   flex-direction: column;
   color: $secondary-color;

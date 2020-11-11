@@ -16,13 +16,15 @@ const ResultsHeader: React.FC = () => {
 
   return (
     <div className="results__header">
-      <div className="results__header-inner  wrapper">
-        <div className="results__count">
-          {moviesCount}
-          {(moviesCount === 1) ? ' movie ' : ' movies '}
-          found
+      <div className="wrapper">
+        <div className="results__header-inner">
+          <div className="results__count">
+            {moviesCount}
+            {(moviesCount === 1) ? ' movie ' : ' movies '}
+            found
+          </div>
+          {(!pathname.includes('movie')) && <ResultsFilter />}
         </div>
-        {(!pathname.includes('movie')) && <ResultsFilter />}
       </div>
     </div>
   );

@@ -29,7 +29,7 @@ const ResultsItem: React.FC<ResultsItemProps> = ({ movie }: ResultsItemProps) =>
       className="results__item results-item"
       onClick={clickHandler}
     >
-      <img src={movie.Poster} alt={movie.Title} />
+      <img className="results-item__image" src={movie.Poster} alt={movie.Title} />
       <div className="results-item__info">
         <div className="results-item__descr">
           <h2 className="results-item__title">{movie.Title}</h2>
