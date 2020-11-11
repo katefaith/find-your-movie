@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './app.scss';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import { Route, Switch } from 'react-router-dom';
@@ -13,7 +12,7 @@ const App: React.FC = () => (
     <ConnectedRouter history={history}>
       <Switch>
         <Route
-          path="/film/:movieTitle"
+          path="/movie/:movieTitle"
           component={MoviePage}
         />
         <Route

@@ -1,6 +1,24 @@
 @import './base/normalize';
 @import './abstracts/variables';
 
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+main {
+  flex-grow: 1;
+}
+
 .wrapper {
   max-width: 1000px;
   margin: 0 auto;

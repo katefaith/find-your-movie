@@ -1,0 +1,36 @@
+@import './../../sass/abstracts/variables.scss';
+
+.movie {
+  display: flex;
+  padding: 40px 0;
+  color: $secondary-color;
+}
+
+.movie__poster {
+  min-width: 300px;
+  margin-right: 60px;
+}
+
+.movie__title {
+  color: $highlight-color;
+}
+
+.movie__row {
+  display: flex;
+  font-weight: 700;
+}
+
+.movie__year {
+  margin-right: 40px;
+}
+
+.movie__genre,
+.movie__plot {
+  opacity: 0.8;
+}
+
+.movie__director,
+.movie__actors {
+  font-size: 1.3rem;
+  opacity: 0.6;
+}

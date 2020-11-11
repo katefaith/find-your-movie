@@ -9,7 +9,7 @@ export function* selectMovieWatcher() {
 
 function* selectMovieWorker({ movieTitle }: ReturnType<typeof selectMovie>) {
   try {
-    yield put(push(`/film/${movieTitle}`));
+    yield put(push(`/movie/${movieTitle}`));
   } catch (error) {
     console.log(error);
   }

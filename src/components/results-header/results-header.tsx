@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getMoviesCount } from '../../selectors';
+import { getCurrentPathname, getMoviesCount } from '../../selectors';
 
 import ResultsFilter from '../results-filter';
 
@@ -8,6 +8,7 @@ import './results-header.scss';
 
 const ResultsHeader: React.FC = () => {
   const moviesCount = useSelector(getMoviesCount);
+  const pathname = useSelector(getCurrentPathname);
 
   if (!moviesCount) {
     return (<div className="results__header" />);
@@ -21,7 +22,7 @@ const ResultsHeader: React.FC = () => {
           {(moviesCount === 1) ? ' movie ' : ' movies '}
           found
         </div>
-        <ResultsFilter />
+        {(!pathname.includes('movie')) && <ResultsFilter />}
       </div>
     </div>
   );
