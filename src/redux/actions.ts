@@ -34,3 +34,10 @@ export function setSortByFilter(field) {
     sortBy: field,
   };
 }
+
+export function selectMovie(selectedMovieId) {
+  return {
+    type: MoviesActionTypes.SELECT_MOVIE,
+    selectedMovieId,
+  };
+}

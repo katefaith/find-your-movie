@@ -2,7 +2,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { selectMovie } from '../../redux/routing/actions';
+import { selectMovie } from '../../redux/actions';
+import { toMoviePage } from '../../redux/routing/actions';
 
 import './results-item.scss';
 
@@ -20,7 +21,8 @@ const ResultsItem: React.FC<ResultsItemProps> = ({ movie }: ResultsItemProps) =>
 
   const clickHandler = (event: any) => {
     event.preventDefault();
-    dispatch(selectMovie(movie.Title, movie.imdbID));
+    dispatch(selectMovie(movie.imdbID));
+    dispatch(toMoviePage(movie.Title));
   };
 
   return (

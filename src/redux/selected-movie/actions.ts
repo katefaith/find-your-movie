@@ -13,10 +13,10 @@ export function getMovieStart() {
   };
 }
 
-export function getMovieFinish(selectedMovie) {
+export function getMovieFinish(data) {
   return {
     type: SelectedMovieActionTypes.GET_MOVIE_FINISH,
-    selectedMovie,
+    data,
   };
 }
 

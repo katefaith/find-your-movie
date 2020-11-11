@@ -4,6 +4,7 @@ const initialState = {
   movies: [],
   isFetching: false,
   sortBy: 'Title',
+  selectedMovieId: '',
 };
 
 const moviesReducer = (state = initialState, action: any) => {
@@ -19,6 +20,9 @@ const moviesReducer = (state = initialState, action: any) => {
 
     case MoviesActionTypes.SET_SORT_BY_FILTER:
       return { ...state, sortBy: action.sortBy };
+
+    case MoviesActionTypes.SELECT_MOVIE:
+      return { ...state, selectedMovieId: action.selectedMovieId };
 
     default:
       return state;

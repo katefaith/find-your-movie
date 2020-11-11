@@ -4,10 +4,10 @@ const initialState = {
   movieId: '',
 };
 
-export const selectMovieReducer = (state = initialState, action: any) => {
+export const reducer = (state = initialState, action: any) => {
   switch (action.type) {
-    case RoutingActionTypes.SELECT_MOVIE:
-      return { ...state, movieId: action.movieId };
+    case RoutingActionTypes.TO_MOVIE_PAGE:
+      return state;
     case RoutingActionTypes.TO_SEARCH_PAGE:
       return state;
     default:

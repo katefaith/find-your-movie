@@ -1,10 +1,9 @@
 import { RoutingActionTypes } from './types';
 
-export function selectMovie(movieTitle: string, movieId: string) {
+export function toMoviePage(movieTitle: string) {
   return {
-    type: RoutingActionTypes.SELECT_MOVIE,
+    type: RoutingActionTypes.TO_MOVIE_PAGE,
     movieTitle,
-    movieId,
   };
 }
 

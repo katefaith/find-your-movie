@@ -10,12 +10,13 @@ type RootState = {
     movies: any
     isFetching: boolean
     sortBy: string
+    selectedMovieId: string
   }
   selectedMovieId: {
     movieId: string
   }
   selectedMovie: {
-    selectedMovie: any
+    data: any
   }
 }
 
@@ -24,8 +25,8 @@ const getSortBy = (state: RootState): string => state.movies.sortBy;
 
 export const getIsFetching = (state: RootState): boolean => state.movies.isFetching;
 export const getMoviesCount = (state: RootState): number => state.movies.movies.length;
-export const getMovieId = (state: RootState): string => state.selectedMovieId.movieId;
-export const getSelectedMovie = (state: RootState): any => state.selectedMovie.selectedMovie;
+export const getMovieId = (state: RootState): string => state.movies.selectedMovieId;
+export const getSelectedMovie = (state: RootState): any => state.selectedMovie.data;
 
 export const getCurrentPathname = (state: RootState): string => state.router.location.pathname;
 
