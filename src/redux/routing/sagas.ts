@@ -14,3 +14,15 @@ function* selectMovieWorker({ movieTitle }: ReturnType<typeof selectMovie>) {
     console.log(error);
   }
 }
+
+export function* goToSearchPageWatcher() {
+  yield takeEvery(RoutingActionTypes.TO_SEARCH_PAGE, goToSearchPageWorker);
+}
+
+function* goToSearchPageWorker() {
+  try {
+    yield put(push('/'));
+  } catch (error) {
+    console.log(error);
+  }
+}

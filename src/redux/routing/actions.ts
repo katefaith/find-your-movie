@@ -7,3 +7,9 @@ export function selectMovie(movieTitle: string, movieId: string) {
     movieId,
   };
 }
+
+export function toSearchPage() {
+  return {
+    type: RoutingActionTypes.TO_SEARCH_PAGE,
+  };
+}

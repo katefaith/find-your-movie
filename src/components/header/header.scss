@@ -1,8 +1,28 @@
 @import './../../sass/abstracts/variables.scss';
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px 70px;
   color: $highlight-color;
   font-size: 2rem;
   font-weight: 700;
+}
+
+.header__link {
+  display: block;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 3px;
+  background-color: $secondary-color;
+  color: $highlight-color;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
