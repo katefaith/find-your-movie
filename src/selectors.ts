@@ -46,3 +46,8 @@ export const getSortedMovies = createSelector(
     }
   },
 );
+
+export const getFilteredMovies = createSelector(
+  [getMovies, getMovieId],
+  (movies, movieId) => movies.filter((movie: any) => movie.imdbID !== movieId),
+);
