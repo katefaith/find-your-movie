@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { getMovie } from '../../redux/selected-movie/actions';
-import { getIsMovieFetching, getMovieId, getSelectedMovie } from '../../selectors';
+import {
+  getCurrentPathname, getIsMovieFetching, getMovieId, getSelectedMovie,
+} from '../../selectors';
 
 import './movie.scss';
 import defaultPoster from '../../images/default-poster.jpg';
@@ -10,6 +13,7 @@ export const Movie: React.FC = () => {
   const movieId = useSelector(getMovieId);
   const isFetching = useSelector(getIsMovieFetching);
   const movie = useSelector(getSelectedMovie);
+  const pathname = useSelector(getCurrentPathname);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,6 +21,12 @@ export const Movie: React.FC = () => {
       dispatch(getMovie(movieId));
     }
   });
+
+  if (pathname.includes('/movie') && Object.keys(movie).length === 0) {
+    return (
+      <Redirect to="/" />
+    );
+  }
 
   if (isFetching) {
     return (
