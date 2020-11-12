@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { getMovies } from '../../redux/movies/actions';
+import { getCurrentPathname, getMoviesCount } from '../../selectors';
 
 import './search-form.scss';
 
@@ -8,6 +9,20 @@ export const SearchForm: React.FC = () => {
   const [request, setReuest] = useState('');
   const [searchType, setSearchType] = useState('movie');
   const dispatch = useDispatch();
+
+  const moviesCount = useSelector(getMoviesCount);
+  const pathname = useSelector(getCurrentPathname);
+  let requestFromUrl = '';
+  if (pathname.includes('search')) {
+    const arr = pathname.split('/');
+    requestFromUrl = arr[arr.length - 1];
+  }
+
+  useEffect(() => {
+    if (requestFromUrl && requestFromUrl !== request && !moviesCount) {
+      dispatch(getMovies(requestFromUrl, searchType));
+    }
+  });
 
   const submitHandler = (event: any) => {
     event.preventDefault();

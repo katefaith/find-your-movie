@@ -16,7 +16,7 @@ export const App: React.FC = () => (
           component={MoviePage}
         />
         <Route
-          path="/search/:request"
+          path="/search/:searchRequest"
           component={SearchPage}
         />
         <Route
