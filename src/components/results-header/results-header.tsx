@@ -2,11 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { getCurrentPathname, getMoviesCount } from '../../selectors';
 
-import ResultsFilter from '../results-filter';
+import { ResultsFilter } from '../results-filter';
 
 import './results-header.scss';
 
-const ResultsHeader: React.FC = () => {
+export const ResultsHeader: React.FC = () => {
   const moviesCount = useSelector(getMoviesCount);
   const pathname = useSelector(getCurrentPathname);
 
@@ -35,5 +35,3 @@ const ResultsHeader: React.FC = () => {
     </div>
   );
 };
-
-export default ResultsHeader;

@@ -7,7 +7,7 @@ import { store, history } from '../..';
 import { SearchPage } from '../../pages/search-page';
 import { MoviePage } from '../../pages/movie-page';
 
-const App: React.FC = () => (
+export const App: React.FC = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
@@ -27,5 +27,3 @@ const App: React.FC = () => (
     </ConnectedRouter>
   </Provider>
 );
-
-export default App;

@@ -4,7 +4,7 @@ import { getMovies } from '../../redux/movies/actions';
 
 import './search-form.scss';
 
-const SearchForm: React.FC = () => {
+export const SearchForm: React.FC = () => {
   const [request, setReuest] = useState('');
   const [searchType, setSearchType] = useState('movie');
   const dispatch = useDispatch();
@@ -49,5 +49,3 @@ const SearchForm: React.FC = () => {
     </form>
   );
 };
-
-export default SearchForm;

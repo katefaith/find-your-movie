@@ -1,8 +1,8 @@
 import React from 'react';
-import Footer from '../../components/footer';
-import Header from '../../components/header';
+import { Footer } from '../../components/footer';
+import { Header } from '../../components/header';
 import { Movie } from '../../components/movie';
-import Results from '../../components/results';
+import { Results } from '../../components/results';
 
 import './movie-page.scss';
 

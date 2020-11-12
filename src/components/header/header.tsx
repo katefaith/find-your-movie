@@ -6,7 +6,7 @@ import { getCurrentPathname } from '../../selectors';
 
 import './header.scss';
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   const pathname = useSelector(getCurrentPathname);
   const dispatch = useDispatch();
 
@@ -33,5 +33,3 @@ const Header: React.FC = () => {
     </header>
   );
 };
-
-export default Header;

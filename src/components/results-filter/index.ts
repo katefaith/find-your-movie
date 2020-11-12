@@ -1,3 +1,1 @@
-import ResultsFilter from './results-filter';
-
-export default ResultsFilter;
+export { ResultsFilter } from './results-filter';

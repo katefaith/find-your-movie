@@ -1,3 +1,1 @@
-import ResultsHeader from './results-header';
-
-export default ResultsHeader;
+export { ResultsHeader } from './results-header';

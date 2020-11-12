@@ -1,8 +1,8 @@
 import React from 'react';
-import Footer from '../../components/footer';
-import Header from '../../components/header';
-import Results from '../../components/results';
-import SearchForm from '../../components/search-form';
+import { Footer } from '../../components/footer';
+import { Header } from '../../components/header';
+import { Results } from '../../components/results';
+import { SearchForm } from '../../components/search-form';
 
 import './search-page.scss';
 

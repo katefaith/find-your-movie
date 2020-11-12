@@ -17,7 +17,7 @@ type ResultsItemProps = {
   }
 }
 
-const ResultsItem: React.FC<ResultsItemProps> = ({ movie }: ResultsItemProps) => {
+export const ResultsItem: React.FC<ResultsItemProps> = ({ movie }: ResultsItemProps) => {
   const dispatch = useDispatch();
 
   const clickHandler = (event: any) => {
@@ -46,5 +46,3 @@ const ResultsItem: React.FC<ResultsItemProps> = ({ movie }: ResultsItemProps) =>
     </a>
   );
 };
-
-export default ResultsItem;

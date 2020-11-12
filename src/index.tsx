@@ -5,8 +5,8 @@ import { compose, createStore, applyMiddleware } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
 import createSagaMiddleware from 'redux-saga';
 
-import App from './components/app';
-import rootReducer from './redux/rootReducer';
+import { App } from './components/app';
+import { rootReducer } from './redux/rootReducer';
 
 import './sass/styles.scss';
 import { rootSaga } from './redux/rootSaga';

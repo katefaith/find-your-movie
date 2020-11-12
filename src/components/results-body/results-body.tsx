@@ -8,11 +8,11 @@ import {
   getSortedMovies,
 } from '../../selectors';
 
-import ResultsItem from '../results-item';
+import { ResultsItem } from '../results-item';
 
 import './results-body.scss';
 
-const ResultsBody: React.FC = () => {
+export const ResultsBody: React.FC = () => {
   const isFetching = useSelector(getIsFetching);
   const moviesCount = useSelector(getMoviesCount);
   const sortedMovies = useSelector(getSortedMovies);
@@ -32,5 +32,3 @@ const ResultsBody: React.FC = () => {
     </div>
   );
 };
-
-export default ResultsBody;

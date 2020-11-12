@@ -1,3 +1,1 @@
-import ResultsBody from './results-body';
-
-export default ResultsBody;
+export { ResultsBody } from './results-body';

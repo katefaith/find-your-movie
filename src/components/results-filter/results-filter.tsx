@@ -4,7 +4,7 @@ import { setSortByFilter } from '../../redux/movies/actions';
 
 import './results-filter.scss';
 
-const ResultsFilter:React.FC = () => {
+export const ResultsFilter:React.FC = () => {
   const dispatch = useDispatch();
 
   const changeHandler = (event) => {
@@ -27,5 +27,3 @@ const ResultsFilter:React.FC = () => {
     </form>
   );
 };
-
-export default ResultsFilter;
