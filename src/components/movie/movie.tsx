@@ -1,26 +1,30 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMovie } from '../../redux/selected-movie/actions';
-import { getMovieId, getSelectedMovie } from '../../selectors';
+import { getIsMovieFetching, getMovieId, getSelectedMovie } from '../../selectors';
 
 import './movie.scss';
 import defaultPoster from '../../images/default-poster.jpg';
 
 export const Movie: React.FC = () => {
   const movieId = useSelector(getMovieId);
-  // const isFetching = useSelector(getIsMovieFetching);
+  const isFetching = useSelector(getIsMovieFetching);
   const movie = useSelector(getSelectedMovie);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getMovie(movieId));
+    if (movie.imdbID !== movieId && !isFetching) {
+      dispatch(getMovie(movieId));
+    }
   });
 
-  // if (isFetching) {
-  //   return (
-  //     <section className="movie">Loading...</section>
-  //   );
-  // }
+  if (isFetching) {
+    return (
+      <section className="movie">
+        <div className="movie__notification">Loading...</div>
+      </section>
+    );
+  }
 
   return (
     <section className="movie">

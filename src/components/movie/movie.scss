@@ -2,8 +2,10 @@
 
 .movie {
   display: flex;
+  justify-content: center;
   padding: 40px 0;
   color: $secondary-color;
+  min-height: 540px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -11,8 +13,16 @@
   }
 }
 
+.movie__notification {
+  padding: 200px 20px;
+  text-align: center;
+  font-size: 4rem;
+}
+
 .movie__poster {
   min-width: 300px;
+  height: 450px;
+  object-fit: contain;
   margin: 0 45px;
 }
 
