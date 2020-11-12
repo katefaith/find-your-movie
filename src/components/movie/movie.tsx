@@ -7,13 +7,19 @@ import './movie.scss';
 
 export const Movie: React.FC = () => {
   const movieId = useSelector(getMovieId);
+  // const isFetching = useSelector(getIsMovieFetching);
+  const movie = useSelector(getSelectedMovie);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getMovie(movieId));
   });
 
-  const movie = useSelector(getSelectedMovie);
+  // if (isFetching) {
+  //   return (
+  //     <section className="movie">Loading...</section>
+  //   );
+  // }
 
   return (
     <section className="movie">

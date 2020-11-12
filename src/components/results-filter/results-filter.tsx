@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setSortByFilter } from '../../redux/actions';
+import { setSortByFilter } from '../../redux/movies/actions';
 
 import './results-filter.scss';
 

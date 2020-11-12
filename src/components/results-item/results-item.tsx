@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { selectMovie } from '../../redux/actions';
+import { selectMovie } from '../../redux/movies/actions';
 import { toMoviePage } from '../../redux/routing/actions';
 
 import './results-item.scss';

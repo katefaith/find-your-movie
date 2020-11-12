@@ -1,6 +1,6 @@
 import { connectRouter } from 'connected-react-router';
 import { combineReducers } from 'redux';
-import moviesReducer from './moviesReducer';
+import { moviesReducer } from './movies/reducer';
 import { selectedMovieReducer } from './selected-movie/reducer';
 
 const rootReducer = (history) => combineReducers({

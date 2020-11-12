@@ -7,7 +7,7 @@ const initialState = {
   selectedMovieId: '',
 };
 
-const moviesReducer = (state = initialState, action: any) => {
+export const moviesReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case MoviesActionTypes.GET_MOVIES_FINISH:
       return { ...state, movies: action.movies, isFetching: false };
@@ -28,5 +28,3 @@ const moviesReducer = (state = initialState, action: any) => {
       return state;
   }
 };
-
-export default moviesReducer;
