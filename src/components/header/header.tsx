@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { clearMovies } from '../../redux/movies/actions';
 import { toSearchPage } from '../../redux/routing/actions';
 import { getCurrentPathname } from '../../selectors';
 
@@ -12,6 +13,7 @@ const Header: React.FC = () => {
   const clickHandler = (event: any) => {
     event.preventDefault();
     dispatch(toSearchPage());
+    dispatch(clearMovies());
   };
 
   const link = (

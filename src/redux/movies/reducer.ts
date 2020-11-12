@@ -24,6 +24,9 @@ export const moviesReducer = (state = initialState, action: any) => {
     case MoviesActionTypes.SELECT_MOVIE:
       return { ...state, selectedMovieId: action.selectedMovieId };
 
+    case MoviesActionTypes.CLEAR_MOVIES:
+      return { ...state, movies: [] };
+
     default:
       return state;
   }

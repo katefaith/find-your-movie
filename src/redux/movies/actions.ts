@@ -41,3 +41,9 @@ export function selectMovie(selectedMovieId) {
     selectedMovieId,
   };
 }
+
+export function clearMovies() {
+  return {
+    type: MoviesActionTypes.CLEAR_MOVIES,
+  };
+}
