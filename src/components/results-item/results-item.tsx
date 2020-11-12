@@ -6,6 +6,7 @@ import { selectMovie } from '../../redux/movies/actions';
 import { toMoviePage } from '../../redux/routing/actions';
 
 import './results-item.scss';
+import defaultPoster from '../../images/default-poster.jpg';
 
 type ResultsItemProps = {
   movie: {
@@ -31,7 +32,11 @@ const ResultsItem: React.FC<ResultsItemProps> = ({ movie }: ResultsItemProps) =>
       className="results__item results-item"
       onClick={clickHandler}
     >
-      <img className="results-item__image" src={movie.Poster} alt={movie.Title} />
+      <img
+        className="results-item__image"
+        src={(movie.Poster !== 'N/A') ? movie.Poster : defaultPoster}
+        alt={movie.Title}
+      />
       <div className="results-item__info">
         <div className="results-item__descr">
           <h2 className="results-item__title">{movie.Title}</h2>

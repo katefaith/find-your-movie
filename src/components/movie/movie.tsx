@@ -4,6 +4,7 @@ import { getMovie } from '../../redux/selected-movie/actions';
 import { getMovieId, getSelectedMovie } from '../../selectors';
 
 import './movie.scss';
+import defaultPoster from '../../images/default-poster.jpg';
 
 export const Movie: React.FC = () => {
   const movieId = useSelector(getMovieId);
@@ -24,7 +25,10 @@ export const Movie: React.FC = () => {
   return (
     <section className="movie">
       <div className="movie__poster">
-        <img src={movie.Poster} alt={movie.Title} />
+        <img
+          src={(movie.Poster !== 'N/A') ? movie.Poster : defaultPoster}
+          alt={movie.Title}
+        />
       </div>
       <div className="movie__info">
         <h1 className="movie__title">{movie.Title}</h1>
