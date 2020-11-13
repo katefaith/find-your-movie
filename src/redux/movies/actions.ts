@@ -1,49 +1,35 @@
 import { MoviesActionTypes } from './types';
 
-export function getMovies(request: string, searchType: string) {
-  return {
-    type: MoviesActionTypes.GET_MOVIES,
-    request,
-    searchType,
-  };
-}
+export const getMovies = (request: string, searchType: string) => ({
+  type: MoviesActionTypes.GET_MOVIES,
+  request,
+  searchType,
+});
 
-export function getMoviesStart() {
-  return {
-    type: MoviesActionTypes.GET_MOVIES_START,
-  };
-}
+export const getMoviesStart = () => ({
+  type: MoviesActionTypes.GET_MOVIES_START,
+});
 
-export function getMoviesFinish(movies) {
-  return {
-    type: MoviesActionTypes.GET_MOVIES_FINISH,
-    movies,
-  };
-}
+export const getMoviesFinish = (movies) => ({
+  type: MoviesActionTypes.GET_MOVIES_FINISH,
+  movies,
+});
 
-export function getMoviesError(error) {
-  return {
-    type: MoviesActionTypes.GET_MOVIES_ERROR,
-    error,
-  };
-}
+export const getMoviesError = (error) => ({
+  type: MoviesActionTypes.GET_MOVIES_ERROR,
+  error,
+});
 
-export function setSortByFilter(field) {
-  return {
-    type: MoviesActionTypes.SET_SORT_BY_FILTER,
-    sortBy: field,
-  };
-}
+export const setSortByFilter = (field) => ({
+  type: MoviesActionTypes.SET_SORT_BY_FILTER,
+  sortBy: field,
+});
 
-export function selectMovie(selectedMovieId) {
-  return {
-    type: MoviesActionTypes.SELECT_MOVIE,
-    selectedMovieId,
-  };
-}
+export const selectMovie = (selectedMovieId) => ({
+  type: MoviesActionTypes.SELECT_MOVIE,
+  selectedMovieId,
+});
 
-export function clearMovies() {
-  return {
-    type: MoviesActionTypes.CLEAR_MOVIES,
-  };
-}
+export const clearMovies = () => ({
+  type: MoviesActionTypes.CLEAR_MOVIES,
+});

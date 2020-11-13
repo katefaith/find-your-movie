@@ -22,21 +22,21 @@ export const SearchForm: React.FC = () => {
     if (requestFromUrl && requestFromUrl !== request && !moviesCount) {
       dispatch(getMovies(requestFromUrl, searchType));
     }
-  });
+  }, []);
 
-  const submitHandler = (event: any) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     dispatch(getMovies(request, searchType));
   };
 
-  const radioChangeHandler = (event: any) => {
+  const handleChangeRadio = (event: any) => {
     if (event.target.checked) {
       setSearchType(event.target.value);
     }
   };
 
   return (
-    <form className="search__form" onSubmit={submitHandler}>
+    <form className="search__form" onSubmit={handleSubmit}>
       <h1 className="search__title">Find your movie</h1>
       <input
         className="search__input"
@@ -50,11 +50,11 @@ export const SearchForm: React.FC = () => {
         <div className="search__filfer">
           Search for
           <label htmlFor="movie">
-            <input id="movie" type="radio" name="search" value="movie" onChange={radioChangeHandler} defaultChecked />
+            <input id="movie" type="radio" name="search" value="movie" onChange={handleChangeRadio} defaultChecked />
             Movie
           </label>
           <label htmlFor="series">
-            <input id="series" type="radio" name="search" value="series" onChange={radioChangeHandler} />
+            <input id="series" type="radio" name="search" value="series" onChange={handleChangeRadio} />
             Series
           </label>
         </div>

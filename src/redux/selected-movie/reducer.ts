@@ -1,7 +1,7 @@
 import { SelectedMovieActionTypes } from './types';
 
 const initialState = {
-  data: {},
+  data: null,
   isFetching: false,
 };
 

@@ -3,10 +3,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { selectMovie } from '../../redux/movies/actions';
-import { toMoviePage } from '../../redux/routing/actions';
+import { goToPage } from '../../redux/routing/actions';
 
 import './results-item.scss';
 import defaultPoster from '../../images/default-poster.jpg';
+import { movieLink } from '../../routing';
 
 type ResultsItemProps = {
   movie: {
@@ -20,17 +21,17 @@ type ResultsItemProps = {
 export const ResultsItem: React.FC<ResultsItemProps> = ({ movie }: ResultsItemProps) => {
   const dispatch = useDispatch();
 
-  const clickHandler = (event: any) => {
+  const handleClick = (event: any) => {
     event.preventDefault();
     dispatch(selectMovie(movie.imdbID));
-    dispatch(toMoviePage(movie.Title));
+    dispatch(goToPage(movieLink.get({ movieTitle: movie.Title })));
   };
 
   return (
     <a
       href={`/film/${movie.Title}`}
       className="results__item results-item"
-      onClick={clickHandler}
+      onClick={handleClick}
     >
       <img
         className="results-item__image"

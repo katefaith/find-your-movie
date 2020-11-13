@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearMovies } from '../../redux/movies/actions';
-import { toSearchPage } from '../../redux/routing/actions';
+import { goToPage } from '../../redux/routing/actions';
+import { mainLink } from '../../routing';
 import { getCurrentPathname } from '../../selectors';
 
 import './header.scss';
@@ -12,7 +13,7 @@ export const Header: React.FC = () => {
 
   const clickHandler = (event: any) => {
     event.preventDefault();
-    dispatch(toSearchPage());
+    dispatch(goToPage(mainLink.get()));
     dispatch(clearMovies());
   };
 

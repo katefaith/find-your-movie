@@ -6,21 +6,22 @@ import { Route, Switch } from 'react-router-dom';
 import { store, history } from '../..';
 import { SearchPage } from '../../pages/search-page';
 import { MoviePage } from '../../pages/movie-page';
+import { mainLink, movieLink, searchLink } from '../../routing';
 
 export const App: React.FC = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
         <Route
-          path="/movie/:movieTitle"
+          path={movieLink.source}
           component={MoviePage}
         />
         <Route
-          path="/search/:searchRequest"
+          path={searchLink.source}
           component={SearchPage}
         />
         <Route
-          path="/"
+          path={mainLink.source}
           component={SearchPage}
         />
       </Switch>

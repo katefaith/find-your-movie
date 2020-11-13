@@ -1,28 +1,7 @@
 import { push } from 'connected-react-router';
-import { put, takeEvery } from 'redux-saga/effects';
-import { toMoviePage } from './actions';
-import { RoutingActionTypes } from './types';
+import { put } from 'redux-saga/effects';
+import { goToPage } from './actions';
 
-export function* goToSearchPageWatcher() {
-  yield takeEvery(RoutingActionTypes.TO_SEARCH_PAGE, goToSearchPageWorker);
-}
-
-function* goToSearchPageWorker() {
-  try {
-    yield put(push('/'));
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-export function* goToMoviePageWatcher() {
-  yield takeEvery(RoutingActionTypes.TO_MOVIE_PAGE, goToMoviePageWorker);
-}
-
-function* goToMoviePageWorker({ movieTitle }: ReturnType<typeof toMoviePage>) {
-  try {
-    yield put(push(`/movie/${movieTitle}`));
-  } catch (error) {
-    console.log(error);
-  }
+export function* goToPageWorker({ path }: ReturnType<typeof goToPage>) {
+  yield put(push(path));
 }

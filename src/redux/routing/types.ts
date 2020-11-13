@@ -1,4 +1,3 @@
 export const RoutingActionTypes = {
-  TO_MOVIE_PAGE: 'TO_MOVIE_PAGE',
-  TO_SEARCH_PAGE: 'TO_SEARCH_PAGE',
+  GO_TO_PAGE: 'GO_TO_PAGE',
 } as const;

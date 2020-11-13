@@ -1,13 +1,15 @@
-import { all } from 'redux-saga/effects';
-import { goToMoviePageWatcher, goToSearchPageWatcher } from './routing/sagas';
-import { getMoviesWatcher } from './movies/sagas';
-import { getMovieWatcher } from './selected-movie/sagas';
+import { all, takeEvery } from 'redux-saga/effects';
+import { goToPageWorker } from './routing/sagas';
+import { getMoviesWorker } from './movies/sagas';
+import { getMovieWorker } from './selected-movie/sagas';
+import { RoutingActionTypes } from './routing/types';
+import { MoviesActionTypes } from './movies/types';
+import { SelectedMovieActionTypes } from './selected-movie/types';
 
 export function* rootSaga() {
   yield all([
-    getMoviesWatcher(),
-    goToMoviePageWatcher(),
-    goToSearchPageWatcher(),
-    getMovieWatcher(),
+    takeEvery(MoviesActionTypes.GET_MOVIES, getMoviesWorker),
+    takeEvery(SelectedMovieActionTypes.GET_MOVIE, getMovieWorker),
+    takeEvery(RoutingActionTypes.GO_TO_PAGE, goToPageWorker),
   ]);
 }

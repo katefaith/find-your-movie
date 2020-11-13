@@ -1,15 +1,10 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put } from 'redux-saga/effects';
 import axios from 'axios';
 import {
   getMovie, getMovieError, getMovieFinish, getMovieStart,
 } from './actions';
-import { SelectedMovieActionTypes } from './types';
 
-export function* getMovieWatcher() {
-  yield takeEvery(SelectedMovieActionTypes.GET_MOVIE, getMovieWorker);
-}
-
-function* getMovieWorker({ movieId }: ReturnType<typeof getMovie>) {
+export function* getMovieWorker({ movieId }: ReturnType<typeof getMovie>) {
   yield put(getMovieStart());
   try {
     const response = yield call(fetchMovie, movieId);
