@@ -4,11 +4,11 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { selectMovie } from '../../redux/movies/actions';
 import { goToPage } from '../../redux/routing/actions';
+import { movieLink } from '../../routing';
+import { MovieType } from '../results-body/results-body';
 
 import './results-item.scss';
 import defaultPoster from '../../images/default-poster.jpg';
-import { movieLink } from '../../routing';
-import { MovieType } from '../results-body/results-body';
 
 type ResultsItemProps = {
   movie: MovieType
@@ -17,7 +17,7 @@ type ResultsItemProps = {
 export const ResultsItem: React.FC<ResultsItemProps> = ({ movie }: ResultsItemProps) => {
   const dispatch = useDispatch();
 
-  const handleClick = (event: any) => {
+  const handleClick = (event: React.MouseEvent) => {
     event.preventDefault();
     dispatch(selectMovie(movie.imdbID));
     dispatch(goToPage(movieLink.get({ movieTitle: movie.Title })));

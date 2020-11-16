@@ -1,13 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import {
-  getCurrentPathname,
-  getFilteredMovies,
-  getIsFetching,
-  getMoviesCount,
-  getSortedMovies,
-} from '../../selectors';
-
+  getFilteredMovies, getIsFetching, getMoviesCount, getSortedMovies,
+} from '../../redux/movies/selectors';
+import { getCurrentPathname } from '../../redux/routing/selectors';
 import { ResultsItem } from '../results-item';
 
 import './results-body.scss';

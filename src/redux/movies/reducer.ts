@@ -1,10 +1,7 @@
 import { MovieType } from '../../components/results-body/results-body';
 import { MoviesActionTypes } from './types';
 import * as actions from './actions';
-
-type InferValueTypes<T> = T extends { [key: string]: infer U }
-  ? U
-  : never;
+import { InferValueTypes } from '../../types/common';
 
 export type ActionTypes = ReturnType<InferValueTypes<typeof actions>>;
 
@@ -15,7 +12,7 @@ export type InitialMoviesStateType = {
   selectedMovieId: string
 }
 
-const initialState = {
+const initialState: InitialMoviesStateType = {
   movies: [],
   isFetching: false,
   sortBy: 'Title',

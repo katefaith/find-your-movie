@@ -1,7 +1,6 @@
 import { createSelector } from 'reselect';
-import { SelectedMovieType } from './components/movie/movie';
-import { MovieType } from './components/results-body/results-body';
-import { RootState } from './redux/rootReducer';
+import { MovieType } from '../../components/results-body/results-body';
+import { RootState } from '../rootReducer';
 
 const getMovies = (state: RootState) => state.movies.movies;
 const getSortBy = (state: RootState): string => state.movies.sortBy;
@@ -9,11 +8,6 @@ const getSortBy = (state: RootState): string => state.movies.sortBy;
 export const getIsFetching = (state: RootState): boolean => state.movies.isFetching;
 export const getMoviesCount = (state: RootState): number => state.movies.movies.length;
 export const getMovieId = (state: RootState): string => state.movies.selectedMovieId;
-
-export const getIsMovieFetching = (state: RootState): boolean => state.selectedMovie.isFetching;
-export const getSelectedMovie = (state: RootState): SelectedMovieType => state.selectedMovie.data;
-
-export const getCurrentPathname = (state: RootState): string => state.router.location.pathname;
 
 export const getSortedMovies = createSelector(
   [getMovies, getSortBy],

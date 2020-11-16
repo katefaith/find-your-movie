@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMovie } from '../../redux/selected-movie/actions';
-import {
-  getIsMovieFetching, getMovieId, getSelectedMovie,
-} from '../../selectors';
+import { goToPage } from '../../redux/routing/actions';
+import { mainLink } from '../../routing';
+import { getMovieId } from '../../redux/movies/selectors';
+import { getIsMovieFetching, getSelectedMovie } from '../../redux/selected-movie/selectors';
 
 import './movie.scss';
 import defaultPoster from '../../images/default-poster.jpg';
-import { goToPage } from '../../redux/routing/actions';
-import { mainLink } from '../../routing';
 
 export type SelectedMovieType = {
   Poster: string

@@ -1,10 +1,7 @@
 import { SelectedMovieType } from '../../components/movie/movie';
 import { SelectedMovieActionTypes } from './types';
 import * as actions from './actions';
-
-type InferValueTypes<T> = T extends { [key: string]: infer U }
-  ? U
-  : never;
+import { InferValueTypes } from '../../types/common';
 
 export type ActionTypes = ReturnType<InferValueTypes<typeof actions>>;
 
@@ -13,7 +10,7 @@ export type InitialSelectedMovieStateType = {
   isFetching: boolean
 };
 
-const initialState = {
+const initialState: InitialSelectedMovieStateType = {
   data: null,
   isFetching: false,
 };

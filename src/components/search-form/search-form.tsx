@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useRouteMatch } from 'react-router';
 import { getMovies } from '../../redux/movies/actions';
-import { getCurrentPathname, getMoviesCount } from '../../selectors';
+import { RouteWithParams } from '../../routing';
 
 import './search-form.scss';
 
@@ -9,27 +10,21 @@ export const SearchForm: React.FC = () => {
   const [request, setReuest] = useState('');
   const [searchType, setSearchType] = useState('movie');
   const dispatch = useDispatch();
-
-  const moviesCount = useSelector(getMoviesCount);
-  const pathname = useSelector(getCurrentPathname);
-  let requestFromUrl = '';
-  if (pathname.includes('search')) {
-    const arr = pathname.split('/');
-    requestFromUrl = arr[arr.length - 1];
-  }
+  const { searchRequest } = useRouteMatch<RouteWithParams>().params;
 
   useEffect(() => {
-    if (requestFromUrl && requestFromUrl !== request && !moviesCount) {
-      dispatch(getMovies(requestFromUrl, searchType));
+    if (searchRequest
+      && searchRequest !== request) { // не дублировать запрос при изменении урла
+      dispatch(getMovies(searchRequest, searchType));
     }
-  }, []);
+  }, [searchRequest]);
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
     dispatch(getMovies(request, searchType));
   };
 
-  const handleChangeRadio = (event: any) => {
+  const handleChangeRadio = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
       setSearchType(event.target.value);
     }

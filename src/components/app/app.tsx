@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router';
 import { store, history } from '../..';
 import { SearchPage } from '../../pages/search-page';
 import { MoviePage } from '../../pages/movie-page';

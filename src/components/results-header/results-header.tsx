@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getCurrentPathname, getMoviesCount } from '../../selectors';
-
+import { getMoviesCount } from '../../redux/movies/selectors';
+import { getCurrentPathname } from '../../redux/routing/selectors';
 import { ResultsFilter } from '../results-filter';
 
 import './results-header.scss';
