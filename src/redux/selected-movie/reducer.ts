@@ -1,11 +1,25 @@
+import { SelectedMovieType } from '../../components/movie/movie';
 import { SelectedMovieActionTypes } from './types';
+import * as actions from './actions';
+
+type InferValueTypes<T> = T extends { [key: string]: infer U }
+  ? U
+  : never;
+
+export type ActionTypes = ReturnType<InferValueTypes<typeof actions>>;
+
+export type InitialSelectedMovieStateType = {
+  data: SelectedMovieType
+  isFetching: boolean
+};
 
 const initialState = {
   data: null,
   isFetching: false,
 };
 
-export const selectedMovieReducer = (state = initialState, action: any) => {
+// eslint-disable-next-line max-len
+export const selectedMovieReducer = (state = initialState, action: ActionTypes): InitialSelectedMovieStateType => {
   switch (action.type) {
     case SelectedMovieActionTypes.GET_MOVIE_FINISH:
       return { ...state, data: action.data, isFetching: false };

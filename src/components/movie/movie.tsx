@@ -10,6 +10,17 @@ import defaultPoster from '../../images/default-poster.jpg';
 import { goToPage } from '../../redux/routing/actions';
 import { mainLink } from '../../routing';
 
+export type SelectedMovieType = {
+  Poster: string
+  Title: string
+  Genre: string
+  Year: string
+  Runtime: string
+  Plot: string
+  Director: string
+  Actors: string
+} | null;
+
 export const Movie: React.FC = () => {
   const movieId = useSelector(getMovieId);
   const isFetching = useSelector(getIsMovieFetching);

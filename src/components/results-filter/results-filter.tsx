@@ -7,7 +7,7 @@ import './results-filter.scss';
 export const ResultsFilter:React.FC = () => {
   const dispatch = useDispatch();
 
-  const changeHandler = (event) => {
+  const changeHandler = (event: { target: { checked: boolean; value: string; }; }) => {
     if (event.target.checked) {
       dispatch(setSortByFilter(event.target.value));
     }

@@ -8,14 +8,10 @@ import { goToPage } from '../../redux/routing/actions';
 import './results-item.scss';
 import defaultPoster from '../../images/default-poster.jpg';
 import { movieLink } from '../../routing';
+import { MovieType } from '../results-body/results-body';
 
 type ResultsItemProps = {
-  movie: {
-    Title: string
-    Year: string
-    Poster: string
-    imdbID: string
-  }
+  movie: MovieType
 }
 
 export const ResultsItem: React.FC<ResultsItemProps> = ({ movie }: ResultsItemProps) => {

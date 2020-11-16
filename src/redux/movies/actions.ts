@@ -1,3 +1,4 @@
+import { MovieType } from '../../components/results-body/results-body';
 import { MoviesActionTypes } from './types';
 
 export const getMovies = (request: string, searchType: string) => ({
@@ -10,22 +11,22 @@ export const getMoviesStart = () => ({
   type: MoviesActionTypes.GET_MOVIES_START,
 });
 
-export const getMoviesFinish = (movies) => ({
+export const getMoviesFinish = (movies: MovieType[]) => ({
   type: MoviesActionTypes.GET_MOVIES_FINISH,
   movies,
 });
 
-export const getMoviesError = (error) => ({
+export const getMoviesError = (error: string) => ({
   type: MoviesActionTypes.GET_MOVIES_ERROR,
   error,
 });
 
-export const setSortByFilter = (field) => ({
+export const setSortByFilter = (field: string) => ({
   type: MoviesActionTypes.SET_SORT_BY_FILTER,
   sortBy: field,
 });
 
-export const selectMovie = (selectedMovieId) => ({
+export const selectMovie = (selectedMovieId: string) => ({
   type: MoviesActionTypes.SELECT_MOVIE,
   selectedMovieId,
 });

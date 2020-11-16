@@ -12,6 +12,13 @@ import { ResultsItem } from '../results-item';
 
 import './results-body.scss';
 
+export type MovieType = {
+  Title: string
+  Year: string
+  Poster: string
+  imdbID: string
+}
+
 export const ResultsBody: React.FC = () => {
   const isFetching = useSelector(getIsFetching);
   const moviesCount = useSelector(getMoviesCount);
@@ -28,7 +35,7 @@ export const ResultsBody: React.FC = () => {
   }
   return (
     <div className="results__body  wrapper">
-      {movies.map((movie: any) => <ResultsItem movie={movie} key={movie.imdbID} />)}
+      {movies.map((movie: MovieType) => <ResultsItem movie={movie} key={movie.imdbID} />)}
     </div>
   );
 };
