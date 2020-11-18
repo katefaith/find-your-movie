@@ -14,7 +14,12 @@ export function* getMovieWorker({ movieId }: ReturnType<typeof getMovie>) {
   }
 }
 
+// async function fetchMovie(movieId: string) {
+//   const response = await axios.get(`https://www.omdbapi.com/?i=${movieId}&apikey=59c039f4`);
+//   return response.data;
+// }
+
 async function fetchMovie(movieId: string) {
-  const response = await axios.get(`https://www.omdbapi.com/?i=${movieId}&apikey=59c039f4`);
+  const response = await axios.get(`http://localhost:3000/movie/${movieId}`);
   return response.data;
 }
