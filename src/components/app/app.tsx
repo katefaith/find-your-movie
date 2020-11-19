@@ -6,7 +6,10 @@ import { Route, Switch } from 'react-router';
 import { store, history } from '../..';
 import { SearchPage } from '../../pages/search-page';
 import { MoviePage } from '../../pages/movie-page';
-import { mainLink, movieLink, searchLink } from '../../routing';
+import { AddMoviePage } from '../../pages/add-movie-page';
+import {
+  addMovieLink, mainLink, movieLink, searchLink,
+} from '../../routing';
 
 export const App: React.FC = () => (
   <Provider store={store}>
@@ -19,6 +22,10 @@ export const App: React.FC = () => (
         <Route
           path={searchLink.source}
           component={SearchPage}
+        />
+        <Route
+          path={addMovieLink.source}
+          component={AddMoviePage}
         />
         <Route
           path={mainLink.source}

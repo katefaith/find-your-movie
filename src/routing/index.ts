@@ -32,3 +32,10 @@ export const searchLink: InternalLink = {
   source: SEARCH,
   get: (params?: RouteWithParams) => searchCompile(params),
 };
+
+const ADD_MOVIE = '/add-movie';
+
+export const addMovieLink: InternalLink = {
+  source: ADD_MOVIE,
+  get: () => ADD_MOVIE,
+};
