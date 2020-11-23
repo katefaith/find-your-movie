@@ -1,0 +1,43 @@
+@import '../../sass/abstracts/variables.scss';
+
+.notification {
+  position: absolute;
+  right: 0;
+  width: 300px;
+  margin: 10px;
+  border-radius: 5px;
+
+  &--success {
+    border: 1px solid $success-border-color;
+    background-color: $success-bg-color;
+    color: $success-text-color;
+  }
+
+  &--error {
+    border: 1px solid $error-border-color;
+    background-color: $error-bg-color;
+    color: $error-text-color;
+  }
+}
+
+.notification__icon-close {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  right: 5px;
+  top: 5px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.notification__text {
+  margin: 20px;
+}

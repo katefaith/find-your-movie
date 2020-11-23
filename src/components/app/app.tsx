@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router';
 import { store, history } from '../..';
 import { SearchPage } from '../../pages/search-page';
 import { MoviePage } from '../../pages/movie-page';
+import { Notification } from '../notification';
 import { AddMoviePage } from '../../pages/add-movie-page';
 import {
   addMovieLink, mainLink, movieLink, searchLink,
@@ -14,24 +15,27 @@ import {
 export const App: React.FC = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Switch>
-        <Route
-          path={movieLink.source}
-          component={MoviePage}
-        />
-        <Route
-          path={searchLink.source}
-          component={SearchPage}
-        />
-        <Route
-          path={addMovieLink.source}
-          component={AddMoviePage}
-        />
-        <Route
-          path={mainLink.source}
-          component={SearchPage}
-        />
-      </Switch>
+      <>
+        <Notification />
+        <Switch>
+          <Route
+            path={movieLink.source}
+            component={MoviePage}
+          />
+          <Route
+            path={searchLink.source}
+            component={SearchPage}
+          />
+          <Route
+            path={addMovieLink.source}
+            component={AddMoviePage}
+          />
+          <Route
+            path={mainLink.source}
+            component={SearchPage}
+          />
+        </Switch>
+      </>
     </ConnectedRouter>
   </Provider>
 );
