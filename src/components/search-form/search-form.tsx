@@ -21,7 +21,9 @@ export const SearchForm: React.FC = () => {
 
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
-    dispatch(getMovies(request, searchType));
+    if (request) {
+      dispatch(getMovies(request, searchType));
+    }
   };
 
   const handleChangeRadio = (event: React.ChangeEvent<HTMLInputElement>) => {
