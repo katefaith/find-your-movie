@@ -1,11 +1,18 @@
 @import '../../sass/abstracts/variables.scss';
 
-.notification {
-  position: absolute;
+.notifications {
+  position: fixed;
   right: 0;
   width: 300px;
+}
+
+.notification {
+  position: relative;
   margin: 10px;
   border-radius: 5px;
+  border: 1px solid $primary-border-color;
+  background-color: $primary-bg-color;
+  color: $primary-text-color;
 
   &--success {
     border: 1px solid $success-border-color;

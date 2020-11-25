@@ -1,4 +1,6 @@
+import { NotificationType } from '../../components/notifications/notifications';
 import { RootState } from '../rootReducer';
 
-export const getNotification = (state: RootState): string | null => state.notifications.text;
-export const getStatus = (state: RootState): string | null => state.notifications.status;
+export const getNotifications = (
+  state: RootState,
+): NotificationType[] => state.notifications.notifications;

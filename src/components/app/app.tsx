@@ -6,7 +6,7 @@ import { Route, Switch } from 'react-router';
 import { store, history } from '../..';
 import { SearchPage } from '../../pages/search-page';
 import { MoviePage } from '../../pages/movie-page';
-import { Notification } from '../notification';
+import { Notifications } from '../notifications';
 import { AddMoviePage } from '../../pages/add-movie-page';
 import {
   addMovieLink, mainLink, movieLink, searchLink,
@@ -16,7 +16,7 @@ export const App: React.FC = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <>
-        <Notification />
+        <Notifications />
         <Switch>
           <Route
             path={movieLink.source}

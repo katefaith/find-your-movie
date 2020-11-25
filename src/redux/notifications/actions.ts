@@ -6,6 +6,7 @@ export const showNotification = (text: string, status: string) => ({
   status,
 });
 
-export const closeNotification = () => ({
+export const closeNotification = (id: number) => ({
   type: NotificationsActionTypes.CLOSE_NOTIFICATION,
+  id,
 });
