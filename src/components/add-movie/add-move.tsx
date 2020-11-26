@@ -26,7 +26,7 @@ export type AddMovieType = {
 export const AddMovie: React.FC = () => {
   const dispatch = useDispatch();
 
-  const SignupSchema = Yup.object().shape({
+  const AddMovieSchema = Yup.object().shape({
     Type: Yup.string()
       .required('Required'),
     Title: Yup.string()
@@ -37,13 +37,16 @@ export const AddMovie: React.FC = () => {
       .url('Not an URL!')
       .required('Required'),
     imdbID: Yup.string()
+      .min(3, 'Too Short!')
+      .max(10, 'Too Long!')
       .required('Required'),
     Genre: Yup.string()
       .min(3, 'Too Short!')
       .max(50, 'Too Long!'),
-    Year: Yup.number()
-      .moreThan(1894, 'There were no movies before 1895')
-      .lessThan(2021, 'Hello from the future!'),
+    Year: Yup.string()
+      .matches(/^[0-9]+$/, 'Not a number!')
+      .min(4, 'Too Short!')
+      .max(4, 'Too Long!'),
     Runtime: Yup.string()
       .min(3, 'Too Short!')
       .max(20, 'Too Long!'),
@@ -74,7 +77,7 @@ export const AddMovie: React.FC = () => {
           Director: '',
           Actors: '',
         }}
-        validationSchema={SignupSchema}
+        validationSchema={AddMovieSchema}
         onSubmit={(values: AddMovieType, { resetForm }: FormikHelpers<AddMovieType>) => {
           // alert(JSON.stringify(values, null, 2));
           dispatch(addMovie(values));
@@ -133,7 +136,7 @@ export const AddMovie: React.FC = () => {
 
             <div className="add-movie__form-field">
               <label className="add-movie__form-label" htmlFor="Plot">Plot:</label>
-              <textarea id="Plot" name="Plot" placeholder="Three teenage friends, in the ultimate act of independence..." />
+              <Field id="Plot" name="Plot" component="textarea" placeholder="Three teenage friends, in the ultimate act of independence..." />
               {errors.Plot && touched.Plot && (<div className="add-movie__form-error">{errors.Plot}</div>)}
             </div>
 
