@@ -1,0 +1,50 @@
+@import './../../sass/abstracts/variables.scss';
+
+.add-movie {
+  padding: 0 50px 30px;
+}
+
+.add-movie__title {
+  text-align: center;
+}
+
+.add-movie__form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-movie__form-field {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    padding: 5px;
+  }
+}
+
+.add-movie__form-label {
+  padding: 5px;
+}
+
+.add-movi__button {
+  align-self: center;
+  padding: 10px 50px;
+  margin: 20px 0;
+  border: none;
+  border-radius: 3px;
+  background-color: $bg-highlight-color;
+  text-transform: uppercase;
+  transition: all 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.add-movie__form-error {
+  margin-top: 5px;
+  color: $highlight-color;
+}

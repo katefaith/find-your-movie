@@ -1,0 +1,23 @@
+@import './../../sass/abstracts/variables.scss';
+
+.footer {
+  padding: 20px 0px;
+  background-color: $bg-primary-color;
+  color: $highlight-color;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__link {
+  color: $secondary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

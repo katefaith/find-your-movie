@@ -1,0 +1,38 @@
+@import './../../sass/abstracts/variables.scss';
+
+.search__form {
+  padding: 0 70px;
+  display: flex;
+  flex-direction: column;
+  color: $secondary-color;
+}
+
+.search__title {
+  text-transform: uppercase;
+}
+
+.search__input {
+  color: $primary-color;
+  padding: 10px 8px;
+  border-radius: 3px;
+}
+
+.search__actions {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search__button {
+  padding: 10px 50px;
+  border: none;
+  border-radius: 3px;
+  background-color: $bg-highlight-color;
+  text-transform: uppercase;
+  transition: all 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

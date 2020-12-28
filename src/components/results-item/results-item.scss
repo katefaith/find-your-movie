@@ -1,0 +1,41 @@
+@import './../../sass/abstracts/variables.scss';
+
+.results-item {
+  width: 300px;
+  margin: 0 25px 50px;
+  text-decoration: none;
+  color: $primary-color;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+.results-item__image {
+  width: 300px;
+  height: 450px;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: filter .5s;
+
+  &:hover {
+    filter: contrast(110%);
+  }
+}
+
+.results-item__info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 5px;
+}
+
+.results-item__title {
+  margin: 0;
+}
+
+.results-item__release-date {
+  padding: 3px 5px;
+  border: 1px solid $primary-color;
+  border-radius: 3px;
+}

@@ -1,0 +1,11 @@
+.results__header {
+  min-height: 60px;
+  padding: 20px 0;
+  background-color: lightgray;
+}
+
+.results__header-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 70px;
+}

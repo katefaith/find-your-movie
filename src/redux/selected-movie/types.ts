@@ -1,0 +1,6 @@
+export const SelectedMovieActionTypes = {
+  GET_MOVIE: 'GET_MOVIE',
+  GET_MOVIE_START: 'GET_MOVIE_START',
+  GET_MOVIE_FINISH: 'GET_MOVIE_FINISH',
+  GET_MOVIE_ERROR: 'GET_MOVIE_ERROR',
+} as const;
